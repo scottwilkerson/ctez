@@ -143,7 +143,7 @@ const ConvertComponent: React.FC<ConversionParams> = ({ t, formType }) => {
                 alignContent="center"
                 justifyContent="center"
               >
-                <Grid item sx={{ minWidth: '41%' }}>
+                <Grid item>
                   <Field
                     component={FormikTextField}
                     name="to"

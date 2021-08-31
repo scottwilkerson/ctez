@@ -91,7 +91,9 @@ export const Page: React.FC<PageProps> = ({ title, children, description, showSt
               </Typography>
             </ContainerStyled>
           )}
-          <ContainerStyled>{!isLoading ? children : <CircularProgress />}</ContainerStyled>
+          <ContainerStyled>
+            {isLoading ? <CircularProgress /> : <div>children</div>}
+          </ContainerStyled>
         </>
       ) : (
         <CircularProgress />

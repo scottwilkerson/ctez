@@ -70,7 +70,8 @@ export const OvenActions: React.FC = () => {
   const { t } = useTranslation(['common']);
   const [value, setValue] = React.useState(0);
   const oven = useSelector((state: RootState) => state.oven.oven);
-  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: number) => {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
 
@@ -84,8 +85,6 @@ export const OvenActions: React.FC = () => {
           indicatorColor="primary"
           textColor="primary"
           aria-label="oven related actions"
-          scrollButtons
-          allowScrollButtonsMobile
         >
           <StyledTab
             className={classes.tab}

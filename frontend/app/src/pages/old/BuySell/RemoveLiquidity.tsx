@@ -130,7 +130,7 @@ const RemoveLiquidityComponent: React.FC<WithTranslation> = ({ t }) => {
                 alignContent="center"
                 justifyContent="center"
               >
-                <Grid item sx={{ minWidth: '41%' }}>
+                <Grid item>
                   <Field
                     component={FormikTextField}
                     name="to"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FieldProps } from 'formik';
-import { Autocomplete, AutocompleteRenderGetTagProps, Chip, TextField } from '@material-ui/core';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { Chip, TextField } from '@material-ui/core';
 import Identicon from '../Identicon';
 import { trimAddress } from '../../../utils/addressUtils';
 
@@ -36,17 +37,16 @@ const getOptionLabel = (option: MultiInputTextFieldOption, isAddress = false) =>
 
 const renderAddressTag = (
   value: MultiInputTextFieldOption[],
-  getTagProps: AutocompleteRenderGetTagProps,
+  // getTagProps: AutocompleteRenderGetTagProps,
 ) =>
   value.map((option, index) => {
-    const { onDelete, ...rest } = getTagProps({ index });
-    const handleDelete = option.noDelete ? undefined : onDelete;
+    // const { onDelete, ...rest } = getTagProps({ index });
+    // const handleDelete = option.noDelete ? undefined : onDelete;
     return (
       <Chip
         variant="outlined"
         label={getOptionLabel(option, true)}
-        onDelete={handleDelete}
-        {...rest}
+        onDelete={() => console.log('delete')}
         avatar={<Identicon seed={option.value ?? option} type="tzKtCat" />}
         key={option?.value ?? option}
       />

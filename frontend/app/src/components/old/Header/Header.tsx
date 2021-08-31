@@ -37,7 +37,7 @@ const HeaderContainer = styled.div`
 
 export const StatsBar: React.FC<StatsBarProps> = ({ stats }) => {
   return (
-    <Box p={2} color="#fff" sx={{ backgroundColor: 'rgba(0,0,0,0.4)' }}>
+    <Box p={2}>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         {stats.map((item, index) => {
           return (

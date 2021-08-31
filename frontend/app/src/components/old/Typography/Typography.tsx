@@ -15,7 +15,6 @@ interface IStyledTypography {
 }
 
 const StyledTypography = styled(MaterialTypography)<IStyledTypography>`
-  font-size: ${({ fontSize }) => fontSize};
   margin: ${({ margin }) => margin};
 `;
 
@@ -23,7 +22,7 @@ export const Typography: React.FC<TypographyProps> = ({ size, children, ...rest 
   const fontSize = size && (size.includes('em') || size.includes('px')) ? size : undefined;
   const variant = (size && !fontSize ? size : 'body1') as MaterialTypographyProps['variant'];
   return (
-    <StyledTypography fontSize={fontSize} variant={variant} {...rest}>
+    <StyledTypography variant={variant} {...rest}>
       {children}
     </StyledTypography>
   );

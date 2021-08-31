@@ -90,7 +90,7 @@ const TrackOvenComponent: React.FC<WithTranslation> = ({ t }) => {
                 alignContent="center"
                 justifyContent="center"
               >
-                <Grid item sx={{ minWidth: '51%' }}>
+                <Grid item>
                   <Field
                     component={FormikTextField}
                     name="ovenAddress"

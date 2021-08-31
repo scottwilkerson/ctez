@@ -84,7 +84,6 @@ const OvenCardComponent: React.FC<OvenCardProps> = ({
                     {t('external')}
                   </Typography>
                 }
-                sx={{ visibility: isExternal ? 'visible' : 'hidden' }}
               />
               <Chip
                 variant="outlined"
@@ -95,7 +94,6 @@ const OvenCardComponent: React.FC<OvenCardProps> = ({
                     {t('imported')}
                   </Typography>
                 }
-                sx={{ visibility: isImported ? 'visible' : 'hidden', marginLeft: '0.4rem' }}
                 onDelete={removeExternalAction}
               />
             </Grid>
@@ -138,9 +136,7 @@ const OvenCardComponent: React.FC<OvenCardProps> = ({
           disableFocusRipple
           endIcon={<ExpandMoreIcon color="action" />}
         >
-          <Typography size="caption" color="CaptionText">
-            {t('actions')}
-          </Typography>
+          <Typography size="caption">{t('actions')}</Typography>
         </Button>
       </CardActions>
     </StyledCard>

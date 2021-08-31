@@ -47,7 +47,6 @@ export const SignIn: React.FC = () => {
             component={RouterLink}
             to="/track-oven"
             endIcon={<GiDeerTrack />}
-            sx={{ textTransform: 'none' }}
           >
             {t('trackOven')}
           </Button>
@@ -58,19 +57,13 @@ export const SignIn: React.FC = () => {
             component={RouterLink}
             to="/create"
             endIcon={<GiChickenOven />}
-            sx={{ textTransform: 'none' }}
           >
             {t('createOven')}
           </Button>
         </Grid>
         {!wallet ? (
           <Grid item>
-            <Button
-              variant="outlined"
-              onClick={connectWallet}
-              sx={{ textTransform: 'none' }}
-              endIcon={<GiWallet />}
-            >
+            <Button variant="outlined" onClick={connectWallet} endIcon={<GiWallet />}>
               {t('signIn')}
             </Button>
           </Grid>

@@ -1,4 +1,4 @@
-import { TextField } from '@material-ui/core';
+import { TextField, TextFieldProps } from '@material-ui/core';
 import { DateTimePicker, DateTimePickerProps } from '@material-ui/pickers';
 import { FieldProps } from 'formik';
 import React from 'react';
@@ -22,18 +22,18 @@ export const FormikDateTimePicker: React.FC<FormikDateTimePickerProps> = ({
         setFieldValue(name, val, false);
         validateForm();
       }}
-      renderInput={(props) => (
-        <TextField
-          name={name}
-          {...props}
-          error={toShowError}
-          helperText={toShowError ? currentError ?? props.helperText : undefined}
-          onBlur={() => {
-            setFieldTouched(name, true, false);
-            validateForm();
-          }}
-        />
-      )}
+      // renderInput={(props: TextFieldProps) => (
+      //   <TextField
+      //     name={name}
+      //     {...props}
+      //     error={toShowError}
+      //     helperText={toShowError ? currentError ?? props.helperText : undefined}
+      //     onBlur={() => {
+      //       setFieldTouched(name, true, false);
+      //       validateForm();
+      //     }}
+      //   />
+      // )}
     />
   );
 };

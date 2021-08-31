@@ -60,13 +60,7 @@ export const MyOvenPage: React.FC = () => {
     <Page showStats>
       {isLoading && <CircularProgress />}
       {!isLoading && (
-        <Grid
-          container
-          direction="row"
-          alignItems="flex-start"
-          justifyItems="flex-start"
-          spacing={3}
-        >
+        <Grid container direction="row" alignItems="flex-start" spacing={3}>
           {ovenData &&
             ovenData.length > 0 &&
             ovenData
