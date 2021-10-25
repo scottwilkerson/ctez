@@ -4,11 +4,10 @@ import {
   Flex,
   FormControl,
   FormErrorMessage,
+  FormHelperText,
   FormLabel,
   IconButton,
   Input,
-  InputGroup,
-  InputRightElement,
   SlideFade,
   Text,
   useColorModeValue,
@@ -17,7 +16,6 @@ import {
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { IoMdCloseCircle } from 'react-icons/io';
-import { MdAdd } from 'react-icons/md';
 import { trimAddress } from '../../utils/addressUtils';
 
 interface IDepositorItem {
@@ -117,33 +115,28 @@ const DepositorsInput: React.FC<IDepositorsInputProps> = (props) => {
           ))}
         </Wrap>
 
-        <InputGroup>
-          <Input
-            name="depositorInput"
-            id="depositorInput"
-            value={depositorInput}
-            onKeyPress={(event) => {
-              if (event.key === 'Enter') {
-                event.preventDefault();
-                onSubmitDepositorInput();
-              }
-            }}
-            onBlur={() => {
-              if (error != null) {
-                setError(null);
-              }
-            }}
-            onChange={(event) => setDepositorInput(event.target.value)}
-          />
-          <InputRightElement>
-            <IconButton
-              icon={<MdAdd />}
-              aria-label="Add Depositor"
-              onClick={onSubmitDepositorInput}
-            />
-          </InputRightElement>
-        </InputGroup>
-
+        <Input
+          name="depositorInput"
+          id="depositorInput"
+          value={depositorInput}
+          onKeyPress={(event) => {
+            if (event.key === 'Enter') {
+              event.preventDefault();
+              onSubmitDepositorInput();
+            }
+          }}
+          onBlur={() => {
+            if (error != null) {
+              setError(null);
+            }
+          }}
+          onChange={(event) => setDepositorInput(event.target.value)}
+        />
+        {!error && (
+          <FormHelperText fontSize="xs" color="#4E5D78">
+            Press Enter to whitelist depositor before Confirm
+          </FormHelperText>
+        )}
         {error && <FormErrorMessage fontSize="xs">{error}</FormErrorMessage>}
       </FormControl>
     </Box>

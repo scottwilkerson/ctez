@@ -97,7 +97,7 @@ form {
 
 ::-webkit-scrollbar {
   left: -10px;
-  width: 8px;
+  width: 16px;
   border-radius: 12px;
   background-color: transparent;
 }

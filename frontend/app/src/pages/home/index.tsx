@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
           </Text>
           <Text
             color={textcolor}
-            fontSize={largerScreen ? '48px' : '26px'}
+            fontSize={largerScreen ? '48px' : '20px'}
             as="strong"
             lineHeight="50px"
           >
